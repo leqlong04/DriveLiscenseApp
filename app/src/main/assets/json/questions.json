@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "content": "Khi gặp biển này, xe có được phép vượt?",
+    "image": "asset:images/cam.jpg",
+    "options": ["Được phép", "Không được phép", "Tùy trường hợp", "Chỉ được vượt ban ngày"],
+    "correctAnswer": "2",
+    "examId": 1,
+    "isCritical": true
+  },
+  {
+    "id": 2,
+    "content": "Xe nào được quyền đi trước tại nơi giao nhau này?",
+    "image": "asset:images/sahinh1.jpg",
+    "options": ["Xe mô tô", "Xe tải", "Xe con", "Xe của bạn"],
+    "correctAnswer": "1",
+    "examId": 1,
+    "isCritical": false
+  }
+]
