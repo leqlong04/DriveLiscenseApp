@@ -17,6 +17,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView tvScore = findViewById(R.id.tvScore);
         TextView tvResult = findViewById(R.id.tvResult);
 
+        // Sửa từ getIntExtra thay vì getBoolean
         int correct = getIntent().getIntExtra("correct", 0);
         int total = getIntent().getIntExtra("total", 25);
 

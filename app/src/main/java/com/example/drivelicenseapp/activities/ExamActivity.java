@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+import android.util.Log;
 public class ExamActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
@@ -176,15 +176,28 @@ public class ExamActivity extends AppCompatActivity {
         boolean hasCriticalWrong = false;
 
         for (Question q : questions) {
-            boolean isCorrect = q.userAnswer.equals(q.correctAnswer);
+            if (q.userAnswer == null || q.userAnswer.isEmpty()) {
+                Log.d("SCORING", "Q" + q.id + " | Chưa trả lời");
+                continue;
+            }
+
+            boolean isCorrect = q.userAnswer.trim().equals(q.correctAnswer.trim());
+
+            Log.d("SCORING", "Q" + q.id
+                    + " | User: '" + q.userAnswer + "'"
+                    + " | Correct: '" + q.correctAnswer + "'"
+                    + " | Result: " + isCorrect);
+
             if (q.isCritical && !isCorrect) hasCriticalWrong = true;
             if (isCorrect) correct++;
         }
 
+        Log.d("FINAL_SCORE", "Correct: " + correct + "/" + questions.size());
+
         boolean passed = !hasCriticalWrong && correct >= 21;
 
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("correct", passed);
+        intent.putExtra("correct", correct); // Truyền số câu đúng
         intent.putExtra("total", questions.size());
         startActivity(intent);
         finish();

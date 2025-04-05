@@ -59,4 +59,7 @@ public class Question implements Serializable {
     public void setOptions(String[] options) {
         this.options = options;
     }
+    public boolean isCorrect() {
+        return userAnswer.equals(correctAnswer);
+    }
 }

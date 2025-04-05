@@ -98,8 +98,9 @@ public class QuestionFragment extends Fragment {
         }
 
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton selected = group.findViewById(checkedId);
-            question.userAnswer = String.valueOf(group.indexOfChild(selected) + 1);
+            int selectedIndex = radioGroup.indexOfChild(group.findViewById(checkedId));
+            question.userAnswer = String.valueOf(selectedIndex + 1);
+            Log.d("ANSWER", "Q" + question.id + " Chọn: " + question.userAnswer);
         });
 
         return view;
