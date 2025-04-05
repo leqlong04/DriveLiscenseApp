@@ -26,7 +26,7 @@ public class Question implements Serializable {
     public int id;
 
     public String content;
-    @SerializedName("images") //load
+    @SerializedName("image") //load
     public String imagePath="";
 
     @NonNull
