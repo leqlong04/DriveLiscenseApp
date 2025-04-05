@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
 import com.example.drivelicenseapp.database.converters.Converters;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
@@ -25,6 +26,7 @@ public class Question implements Serializable {
     public int id;
 
     public String content;
+    @SerializedName("images") //load
     public String imagePath="";
 
     @NonNull
