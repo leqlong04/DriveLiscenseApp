@@ -22,8 +22,8 @@ public class JsonHelper {
 
     private static String processImagePath(Context context, String rawPath) {
         // Sửa điều kiện check prefix thành "assets:"
-        if (rawPath.startsWith("asset:")) {
-            return copyAssetToInternalStorage(context, rawPath.replace("asset:", ""));
+        if (rawPath.startsWith("assets:")) {
+            return copyAssetToInternalStorage(context, rawPath.replace("assets:", ""));
         }
         return rawPath;
     }
