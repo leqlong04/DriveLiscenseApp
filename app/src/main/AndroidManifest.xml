@@ -60,7 +60,10 @@
             android:label="Chọn đề thi"
             android:theme="@style/Theme.DriveLicenseApp"/>
         <!-- Thêm các activity khác tại đây nếu cần -->
-
+        <activity
+            android:name=".activities.ReviewActivity"
+            android:label="Xem lại bài làm"
+            android:theme="@style/Theme.DriveLicenseApp"/>
     </application>
 
 </manifest>

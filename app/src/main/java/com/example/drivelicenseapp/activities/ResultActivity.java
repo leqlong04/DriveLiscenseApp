@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.drivelicenseapp.R;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.Serializable;
+
 public class ResultActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +28,12 @@ public class ResultActivity extends AppCompatActivity {
 
         MaterialButton btnRetry = findViewById(R.id.btnRetry);
         MaterialButton btnHome = findViewById(R.id.btnHome);
-
+        MaterialButton btnReview = findViewById(R.id.btnReview);
+        btnReview.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ReviewActivity.class);
+            intent.putExtra("questions", (Serializable) getIntent().getSerializableExtra("questions"));
+            startActivity(intent);
+        });
         btnRetry.setOnClickListener(v -> {
             // Xử lý thử lại
             Intent intent = new Intent(this, ExamActivity.class);

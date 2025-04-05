@@ -32,28 +32,37 @@
         android:textStyle="bold"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_width="385dp"
+        android:layout_height="96dp"
         android:layout_marginTop="32dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReview"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Xem lại"
+            app:icon="@drawable/ic_review" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRetry"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thử lại"
-            app:icon="@drawable/ic_retry"
             android:layout_marginEnd="16dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            android:text="Thử lại"
+            app:icon="@drawable/ic_retry" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHome"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trang chủ"
-            app:icon="@drawable/ic_home"
-            style="@style/Widget.MaterialComponents.Button"/>
+            app:icon="@drawable/ic_home" />
 
     </LinearLayout>
 

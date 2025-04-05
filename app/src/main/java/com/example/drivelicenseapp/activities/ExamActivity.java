@@ -17,6 +17,7 @@ import com.example.drivelicenseapp.database.entities.Question;
 import com.example.drivelicenseapp.helpers.JsonHelper;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -197,7 +198,8 @@ public class ExamActivity extends AppCompatActivity {
         boolean passed = !hasCriticalWrong && correct >= 21;
 
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("correct", correct); // Truyền số câu đúng
+        intent.putExtra("questions", (Serializable) questions); // Thêm dòng này
+        intent.putExtra("correct", correct);
         intent.putExtra("total", questions.size());
         startActivity(intent);
         finish();
